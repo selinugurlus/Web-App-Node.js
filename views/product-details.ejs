@@ -8,19 +8,34 @@
     <link rel="stylesheet" href="/css/style.css">
 
 </head>
-    <body class="bg-warning">
-        <h1><%= name %></h1>
-       <!-- <img src="/images/ejsout imageUrl "alt="" width="300"> resimleri dinamik olarak eklemek için -->
-        <img src="/images/img1.jpg" alt="" width="300">
-            <p>fiyat: <%=price%> </p>
-            <p>
-                <% if (isActive) { %>
-                 <span>  on sale.  </span>
-               <% }
-                 else { %>
-                    <span>not on sale.</span>
-               <%}%>    
-            </p>
+    <body>
+        <%- include("partials/nav")  %> 
         
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/images/<%=imageUrl%>"alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%=name%> </h5>
+                                    <p class="card-text"><%=price%> </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, 
+                                        adipisicing elit. Esse ipsam saepe quae nobis aspernatur repellat
+                                        numquam neque, dicta quidem optio dolores expedita impedit nisi? Minus 
+                                        erum aperiam odit itaque consectetur?
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

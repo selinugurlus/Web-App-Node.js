@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-AU-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
     <head>
 
     </head>
-    <bod>
-        <h1>
-            Homapage.
-        </h1>
-    </bod>
+    <body>
 
-    
-</htm>
+        <%- include("partials/nav")  %> 
+        
+        <div class="container mt-3">
+            <h1>HOMEPAGE</h1>
+            <div class="row">
+                <div class="col-12">
+                    <% list.forEach(product => { %>
+
+                        <% if (product.isHome==true){ %>
+                          
+                            <%- include("partials/product",product)  %> 
+
+                        <% }%>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+        
+        
+          
+
+    </body>
+</html>

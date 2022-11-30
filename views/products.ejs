@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-AU-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
     <head>
 
     </head>
     <body>
-        <h1>
-            Products.
-        </h1>
+        <%- include("partials/nav")  %> 
         
-        <ul>
-            <% list.forEach(product => { %>
+        <div class="container mt-3">
+            <h1>PRODUCTS</h1>
+            <div class="row">
+                <div class="col-12">
+                    <% list.forEach(product => { %>
 
-                <% if(product.isActive==true){%>
+                        <%- include("partials/product",product)  %> 
 
-                <li>
-                    <a href="/products/<%=product.id %>">
-                        <%=product.name  %> <%= product.price %> 
-                    </a>
-                
-                </li>
-            <% } %>
-            <% }) %>
-        </ul>
-
+                <% }) %>
+                </div>
+            </div>
+        </div>
+        
+        
+          
 
     </body>
 </html>
